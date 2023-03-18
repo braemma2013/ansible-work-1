@@ -14,5 +14,6 @@
     git:
       repo: https://github.com/CeeyIT-Solutions/ecomm.git
       dest: /var/www/html
+      force: yes
 
 ...
