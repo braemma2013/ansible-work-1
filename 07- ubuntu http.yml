@@ -1,0 +1,32 @@
+ 
+---
+- name: install Http server Ubuntu
+  hosts: n1
+  become: yes
+
+  tasks:
+  - name: Install Apache2
+    apt:
+      name: apache2
+      state: latest
+      update_cache: true
+  
+  name: Install Apache2
+    apt:
+      name: apache2
+      state: present
+
+  - name: start http apache2
+    service:
+      name: apache2
+      state: started
+
+  - name: enable Apache2
+    service:
+      name: apache2
+      enabled: true
+
+
+    
+
+...
