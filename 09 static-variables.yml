@@ -1,0 +1,14 @@
+# ansible n2 -m copy -a "src=maintenance.html dest=/var/www/html/index.html" 
+---
+- name: under maintenance
+  hosts: g1
+  become: yes
+
+  tasks:
+  - name: update maintenace
+    copy:
+      src: static.html
+      dest: /var/www/html/static.html
+
+
+...
