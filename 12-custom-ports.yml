@@ -1,0 +1,18 @@
+# ansible n2 -m copy -a "src=maintenance.html dest=/var/www/html/index.html" 
+---
+- name: static page
+  hosts: g1
+  become: yes
+  vars:
+    http_port_default: '80'
+    http_port_1: '8080'
+    http_port_2: '9090'
+
+  tasks:
+  - name: update dynamic page
+    template:
+      src: dynamic.j2
+      dest: /etc/httpd/conf/conf.confg 
+
+
+...
